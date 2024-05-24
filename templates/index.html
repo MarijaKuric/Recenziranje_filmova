@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recenzije Filmova</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stilovi.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Recenzije Filmova</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="tab-pocetna" class="aktivna-kartica">Početna stranica</a></li>
+                <li><a href="#" id="tab-film">Film</a></li>
+                <li><a href="#" id="tab-recenzija">Recenzija</a></li>
+                <li><a href="#" id="tab-recenzirani">Recenzirani filmovi</a></li>
+                <li><a href="#" id="tab-statistika">Statistički podaci</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="pocetna-stranica" class="aktivna-sekcija">
+            <h2>Dobrodošli u Recenzije Filmova</h2>
+            <p>Naša stranica omogućuje vam da recenzirate filmove i pregledate statističke podatke o ocjenama. Uživajte u ocjenjivanju i otkrivanju novih filmova!</p>
+        </section>
+        <section id="obrazac-filma" style="display: none;">
+            <h2>Unesite Informacije o Filmu</h2>
+            <form id="forma-filma">
+                <div class="grupa-polja">
+                    <label for="naslov-filma">Naslov Filma:</label>
+                    <input type="text" id="naslov-filma" name="naslov-filma" required>
+                </div>
+                <div class="grupa-polja">
+                    <label for="godina-izlaska">Godina Izlaska:</label>
+                    <input type="text" id="godina-izlaska" name="godina-izlaska" required>
+                </div>
+                <button type="submit">Pošalji Film</button>
+            </form>
+        </section>
+        <section id="obrazac-recenzije" style="display: none;">
+            <h2>Napišite Recenziju</h2>
+            <form id="forma-recenzije">
+                <div class="grupa-polja">
+                    <label for="recenzija">Recenzija:</label>
+                    <textarea id="recenzija" name="recenzija" rows="5" required></textarea>
+                </div>
+                <div class="grupa-polja">
+                    <label for="ocjena">Ocjena:</label>
+                    <input type="number" id="ocjena" name="ocjena" min="1" max="10" required>
+                </div>
+                <button type="submit">Pošalji Recenziju</button>
+            </form>
+        </section>
+        <section id="recenzirani-filmovi" style="display: none;">
+            <h2>Recenzirani Filmovi</h2>
+            <ul id="lista-filmova"></ul>
+        </section>
+        <section id="statisticki-podaci" style="display: none;">
+            <h2>Statistički podaci</h2>
+            <div id="dijagrami">
+                <canvas id="dijagram-ocjene"></canvas>
+                <canvas id="dijagram-godina"></canvas>
+                <canvas id="dijagram-zanrovi"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='skripta.js') }}"></script>
+</body>
+</html>
+
