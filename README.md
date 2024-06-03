@@ -7,9 +7,9 @@
 
 ## Instalacija
 cd ~/Downloads
-git clone https://github.com/MarijaKuric/Recenziranje_filmova
-cd recenziranje_filmova
+<br>git clone https://github.com/MarijaKuric/Recenziranje_filmova
+<br>cd recenziranje_filmova
 
 docker build -t recenziranje_filmova .
-docker ps
-docker run -p 8080:8080 recenziranje_filmova
+<br>docker ps
+<br>docker run -p 8080:8080 recenziranje_filmova
