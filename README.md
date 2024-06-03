@@ -4,3 +4,12 @@
 ## Use case dijagram
 
 ![image](https://github.com/MarijaKuric/Recenziranje_filmova/assets/159777612/28745638-c5e1-4ecf-a244-9b29af16425b)
+
+## Instalacija
+cd ~/Downloads
+git clone https://github.com/MarijaKuric/Recenziranje_filmova
+cd recenziranje_filmova
+
+docker build -t recenziranje_filmova .
+docker ps
+docker run -p 8080:8080 recenziranje_filmova
